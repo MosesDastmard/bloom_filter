@@ -6,18 +6,13 @@ Bloom proposed the technique for applications where the amount of source data wo
 <a href='https://arxiv.org/pdf/1803.04189.pdf'>Read More...</a>
 
 ## Hashing task!
-### Having trouble Latex equations are not rendered, download the boolm_filter.ipynb
-The bloom filter is an array initialized with all False of lenght hash_size, a huge prime number.
-To be sure that the probability of false positive is small enough we take $p\approx\big(1-e^{\frac{-kn}{m}}\big)^k \approx 10^{-15}$.
-To do this, knowing that the numbers of passwords in passwords1.txt is $n=10^8$, we pick the follow values for hash_size $m=10000000019$ a huge prime number base on the chapter 1 of [book](https://books.google.it/books?id=ONU4tfT_GxcC&dq=algorithm+Umesh+Vazirani&hl=en&sa=X&ved=0ahUKEwiC1KPghormAhXIG5oKHZ_gBqkQ6AEIKTAA) titled Algorithm and hash_funcs_num $k=20$.
+The bloom filter is an array initialized with all False of lenght hash_size, a huge prime number to make sure that the probability of false positive is small enough.
+To do this, knowing that the numbers of passwords in passwords1.txt (the file is 2Gbyte and does not exist, you may find small version of the file on git repositories) is 100000000, we pick the follow values for hash_size m=10000000019 a huge prime number base on the chapter 1 of [book](https://books.google.it/books?id=ONU4tfT_GxcC&dq=algorithm+Umesh+Vazirani&hl=en&sa=X&ved=0ahUKEwiC1KPghormAhXIG5oKHZ_gBqkQ6AEIKTAA) titled Algorithm and hash_funcs_num k=20.
 
 We convert each password to an array corresponding ordinals of the length of the password.
 
-$$\forall\: \text{hash function} \: h_j \:\: \text{with} \: j \in \{0, \dots ,k-1\} \:\:\:\: h_j = \sum_{i=0}^{19} ord_i C_{i,j} \: mod \: m $$
-
-Each $C_{i,j}$ is taken randomly from a uniform discret distribution ranging from $0$ to $m-1$
-
 To have a faster numerical computation we use numba package that can convert python function to be compiled on C/C++ that has the ability to run the function on GPU and CPU(Parallel).
+
 
 
 ```python
