@@ -11,15 +11,14 @@ To do this, knowing that the numbers of passwords in passwords1.txt (the file is
 
 We convert each password to an array corresponding ordinals of the length of the password.
 
-To have a faster numerical computation we use numba package that can convert python function to be compiled on C/C++ that has the ability to run the function on GPU and CPU(Parallel).
+To have a faster numerical computation we use <a href='https://numba.pydata.org/'>numba </a> package that can convert python function to be compiled on C/C++ that has the ability to run the function on GPU and CPU(Parallel) that help numerical computation to be done faster. REALLY FASTERRRRRRR
+Also <a href='https://spark.apache.org/docs/latest/api/python/index.html'> pyspark </a> is used to exploit computation resources and boost finding duplicat passwords.
 
+To check the describtion with Latex equations check <a href='https://github.com/MosesDastmard/bloom_filter/blob/master/boolm_filter.ipynb'>boolm_filter.ipynb</a>
 
 
 ```python
 import numpy as np
-# numba is the package that can convert python function to be compiled on C/C++
-# that has the ability to run the function in on GPU and CPU(Parallel) that help
-# numerical computation to be done faster. REALLY FASTERRRRRRR 
 from numba import jit
 from tqdm import tqdm
 import time
