@@ -6,6 +6,7 @@ A Bloom filter is a space-efficient probabilistic data structure, that is used t
 
 Bloom proposed the technique for applications where the amount of source data would require an impractically large amount of memory if "conventional" error-free hashing techniques were applied. He gave the example of a hyphenation algorithm for a dictionary of 500,000 words, out of which 90% follow simple hyphenation rules, but the remaining 10% require expensive disk accesses to retrieve specific hyphenation patterns. With sufficient core memory, an error-free hash could be used to eliminate all unnecessary disk accesses; on the other hand, with limited core memory, Bloom's technique uses a smaller hash area but still eliminates most unnecessary accesses. For example, a hash area only 15% of the size needed by an ideal error-free hash still eliminates 85% of the disk accesses.
 <a href='https://arxiv.org/pdf/1803.04189.pdf'>Read More...</a>
+NB: The passwords1.txt and passwords2.txt are two big files that are not uploaded into repository.
 
 ## Hashing task!
 The bloom filter is an array initialized with all False of lenght hash_size, a huge prime number to make sure that the probability of false positive is small enough.
